@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/album_title_id"
+        android:text="@string/Album_title"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:paddingLeft="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        />
+    <View
+        android:id="@+id/line"
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="30dp"
+        android:layout_alignBottom="@+id/album_title_id"
+        android:background="#AFADAD"/>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/search"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"/>
+
+    <ImageView
+        android:id="@+id/big_image_id"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_below="@+id/album_title_id"
+        android:layout_marginTop="20dp"
+        android:background="#FCFAFA"
+        android:layout_marginStart="20dp"/>
+    <TextView
+        android:id="@+id/band_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Band"
+        android:layout_toEndOf="@+id/big_image_id"
+        android:layout_below="@+id/album_title_id"
+        android:layout_marginTop="25dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#8B8A8A"
+        android:layout_marginStart="20dp"
+        />
+    <TextView
+        android:id="@+id/song_lenght"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3:45"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/big_image_id"
+        android:layout_below="@+id/band_id"
+        android:layout_marginStart="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/singers_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Singers will be here"
+        android:layout_below="@id/song_lenght"
+        android:layout_toEndOf="@+id/big_image_id"
+        android:layout_marginStart="20dp"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/song_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/song_details"
+        android:layout_below="@+id/big_image_id"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:textSize="18dp"
+        android:padding="10dp"/>
+
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="30dp"
+        android:layout_alignBottom="@+id/song_details"
+        android:background="#AFADAD"/>
+
+    <Button
+        android:id="@+id/play_button_id"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:textColor="#FFF"
+        android:text="Play"
+        android:textSize="15dp"
+        android:textAllCaps="false"
+        android:layout_below="@id/song_details"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp" />
+
+    <ImageView
+        android:id="@+id/like_id"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/likebutton"
+        android:layout_below="@+id/line_2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp" />
+</RelativeLayout>

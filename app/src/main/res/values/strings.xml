@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AppMusic</string>
+    <string name="title_music">Music</string>
+    <string name="popular_albums_title">Popular albums</string>
+    <string name="show_all_albums">see all></string>
+    <string name="Album_title">Album Title will be here.</string>
+    <string name="Band">Band name will be here</string>
+    <string name="song_details">Song details will be here...</string>
+</resources>
