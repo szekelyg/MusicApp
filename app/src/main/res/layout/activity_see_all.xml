@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeeAllActivity">
+    <TextView
+        android:id="@+id/seeAll_title_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popular_albums_title"
+        android:textStyle="bold"
+        android:textSize="22dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:textColor="#000"/>
+
+    <View
+        android:id="@+id/line_3"
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignBottom="@+id/seeAll_title_id"
+        android:background="#AFADAD"/>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/search"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <ListView
+        android:id="@+id/albums_list_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_3"
+        android:layout_marginTop="10dp"
+        android:dividerHeight="0dp"
+        android:divider="@null">
+    </ListView>
+
+</RelativeLayout>

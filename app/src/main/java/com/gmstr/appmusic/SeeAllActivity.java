@@ -3,52 +3,32 @@ package com.gmstr.appmusic;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+public class SeeAllActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-
-    private LinearLayout mGallery;
-    private LayoutInflater mInflater;
-    private HorizontalScrollView horizontalScrollView;
     private ListView myListView;
-    private Button seeAllButton;
-
     private final int[] mImgIds = new int[]{R.drawable.album_cover_1,R.drawable.album_cover_2,R.drawable.album_cover_3,R.drawable.album_cover_4,R.drawable.album_cover_5,R.drawable.album_cover_6,R.drawable.album_cover_7,R.drawable.album_cover_8};
     private final String[] albums = new String[]{"Danger Doom","Devils Gun","Saudade","Magdalena","Pink Floyd","Queen","Kinns","Danger Doom"};
     private final String[] bands = new String[]{"Vikings","Revolver","Kinns","Strange,free,enemy","Rock Covers","Bohemian Rhapsody","Saudade","Someting else"};
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_see_all);
 
-        mGallery = findViewById(R.id.id_gallery);
         myListView = findViewById(R.id.albums_list_id);
-        seeAllButton = findViewById(R.id.seeAllButtonId);
 
-        ListViewAdapter listViewAdapter = new ListViewAdapter(MainActivity.this,albums,bands,mImgIds);
+        ListViewAdapter listViewAdapter = new ListViewAdapter(SeeAllActivity.this,albums,bands,mImgIds);
         myListView.setAdapter(listViewAdapter);
-
-        mInflater = LayoutInflater.from(this);
-
-        initView();
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent myIntent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent myIntent = new Intent(SeeAllActivity.this, DetailActivity.class);
                 myIntent.putExtra("album_title",albums[position]);
                 myIntent.putExtra("band",bands[position]);
                 myIntent.putExtra("image",mImgIds[position]);
@@ -57,29 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
-
-        seeAllButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this,SeeAllActivity.class);
-                startActivity(myIntent);
-            }
-        });
-
-    }
-
-    private void initView()
-    {
-        for (int i = 0; i < mImgIds.length; i++)
-        {
-            View view = mInflater.inflate(R.layout.gallery_item, mGallery, false);
-            ImageView img = view.findViewById(R.id.gallery_item_image_id);
-            img.setImageResource(mImgIds[i]);
-
-            mGallery.addView(view);
-        }
-
-
 
     }
 }
